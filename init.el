@@ -28,7 +28,6 @@
   '(flycheck
     flycheck-haskell
     haskell-mode
-    shm
     undo-tree)
   "List of packages to be installed from archives")
 
@@ -46,9 +45,6 @@
     (when (not (package-installed-p pkg))
       (package-install pkg))))
 
-(require 'undo-tree)
-(global-undo-tree-mode)
-
 
 ;; Flycheck configuration
 (require 'flycheck)
@@ -65,8 +61,11 @@
 (add-hook 'haskell-mode-hook #'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook #'interactive-haskell-mode)
 (add-hook 'haskell-mode-hook #'hindent-mode)
-(add-hook 'haskell-mode-hook #'structured-haskell-mode)
 
+;; SHM
+(add-to-list 'load-path "/root/structured-haskell-mode/elips")
+(require 'shm)
+(add-hook 'haskell-mode-hook #'structured-haskell-mode)
 
 ;; Miscellaneous goodies
 (add-hook 'prog-mode-hook #'linum-mode)
@@ -74,3 +73,6 @@
 (show-paren-mode t)
 (add-hook 'package-menu-mode-hook #'hl-line-mode)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
+
+(require 'undo-tree)
+(global-undo-tree-mode)
