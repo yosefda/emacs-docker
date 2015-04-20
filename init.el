@@ -51,6 +51,7 @@
 
 ;; Flycheck configuration
 (require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
 ;; Disable built-in haskell checker,
 ;; because of https://github.com/chrisdone/haskell-flycheck
 (add-hook
