@@ -32,6 +32,7 @@
     undo-tree)
   "List of packages to be installed from archives")
 
+(require 'cl)
 (defun x/packages-installed-p ()
   (loop for pkg in def/packages
         when (not (package-installed-p pkg)) do (return nil)
