@@ -57,10 +57,12 @@
 
 
 ;; Haskell support
+(require 'haskell-mode)
+(require 'interactive-haskell-mode)
 (add-hook 'haskell-mode-hook #'turn-on-font-lock)
 (add-hook 'haskell-mode-hook #'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook #'interactive-haskell-mode)
-(add-hook 'haskell-mode-hook #'hindent-mode)
+;; (add-hook 'haskell-mode-hook #'hindent-mode)
 
 ;; SHM
 (add-to-list 'load-path "/root/structured-haskell-mode/elips")
