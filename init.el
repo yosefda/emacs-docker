@@ -58,7 +58,8 @@
 
 ;; Haskell support
 (require 'haskell-mode)
-(require 'interactive-haskell-mode)
+(require 'haskell-interactive-mode)
+(require 'haskell-process)
 (add-hook 'haskell-mode-hook #'turn-on-font-lock)
 (add-hook 'haskell-mode-hook #'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook #'interactive-haskell-mode)
